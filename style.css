@@ -11,7 +11,7 @@ html {
 
 body {
   font-family: 'Raleway', sans-serif;
-  line-height: 1.6;
+  line-height: 1.8;
   background: #fafafa;
   color: #333;
   overflow-x: hidden;
@@ -24,11 +24,11 @@ body {
   left: 0;
   width: 100%;
   background: rgba(0,0,0,0.7);
-  padding: 8px 20px;
+  padding: 8px 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;   /* Logo left, links right */
   align-items: center;
-  z-index: 1001;
+  z-index: 1001;  /* Above hero overlay */
   backdrop-filter: blur(8px);
   transition: background 0.3s ease;
 }
@@ -47,7 +47,6 @@ body {
   width: auto;
 }
 
-/* Navbar links */
 .navbar ul {
   list-style: none;
   display: flex;
@@ -62,6 +61,7 @@ body {
   padding: 8px 16px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  background: transparent;
 }
 
 .navbar a:hover,
@@ -69,14 +69,6 @@ body {
   background: linear-gradient(45deg, #ff6f61, #ffcc00);
   color: #fff;
   transform: translateY(-2px);
-}
-
-/* Hamburger menu */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  color: #fff;
-  cursor: pointer;
 }
 
 /* HERO Section - Slider */
@@ -113,8 +105,8 @@ body {
   position: absolute;
   top:0; left:0;
   width: 100%; height: 100%;
-  background: linear-gradient(-45deg, rgba(0,0,0,0.6), rgba(255,204,0,0.4), rgba(255,111,97,0.4));
-  background-size: 400% 400%;
+  background: linear-gradient(-45deg, rgba(0,0,0,0.5), rgba(255,204,0,0.4), rgba(255,111,97,0.5));
+  background-size: 300% 300%;
   animation: gradientShift 10s ease infinite;
   z-index: 0;
 }
@@ -262,43 +254,48 @@ body {
   margin: 10px 0;
 }
 
-/* Quick Links */
-.quick-links {
-  background: #f5f5f5;
-  padding: 40px 20px;
-  text-align: center;
+/* Quick Links & Social Icons */
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
-.quick-links h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.footer-links h3 {
   color: #ff6f61;
+  margin-bottom: 10px;
 }
 
 .quick-links ul {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
+}
+
+.quick-links li {
+  margin: 5px 0;
 }
 
 .quick-links a {
   text-decoration: none;
   color: #333;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 1rem;
 }
 
 .quick-links a:hover {
-  background: linear-gradient(45deg, #ff6f61, #ffcc00);
-  color: #fff;
+  color: #ff6f61;
 }
 
+.social-icons a {
+  color: #333;
+  margin: 0 8px;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #ff6f61;
+}
 
 /* Footer */
 footer {
@@ -309,24 +306,14 @@ footer {
   font-size: 0.9rem;
 }
 
-footer .social-media a {
-  color: #ffcc00;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-footer .social-media a:hover {
-  color: #ff6f61;
-}
-
 /* WhatsApp Button */
 .whatsapp-float {
   position: fixed;
   bottom: 20px; right: 20px;
-  background: #25d366;
+  background: #25d366;     
   color: #fff;
   padding: 18px;
-  border-radius: 50%;
+  border-radius: 100%;
   font-size: 2rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
@@ -338,34 +325,23 @@ footer .social-media a:hover {
 
 /* Responsive */
 @media(max-width: 768px){
-  /* Show hamburger menu */
-  .hamburger { display: block; }
-
-  /* Hide nav links initially */
-  .navbar ul {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: rgba(0,0,0,0.85);
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 25px;
-    border-radius: 8px;
-    display: none;
-  }
-
-  /* Show menu when toggle is active */
-  .navbar ul.show { display: flex; }
-
   .hero h1 {font-size: 2rem;}
-  .hero p {font-size: 1rem;}
   .btn {font-size: 1rem;}
-
-  .logo span {
-    font-size: 1rem;
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.9);
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    border-radius: 10px;
   }
-
   .service-grid, .gallery-grid {
     grid-template-columns: 1fr;
+  }
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
   }
 }
