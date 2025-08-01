@@ -305,6 +305,17 @@ footer {
   padding: 20px;
   font-size: 0.9rem;
 }
+.developer-signature {
+  font-size: 0.75rem;         /* smaller than copyright */
+  color: #bbb;                /* subtle color */
+  margin-top: 5px;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.developer-signature strong {
+  color: #ff6f61;             /* highlight TAFF CARP RWANDA with brand color */
+}
 
 /* WhatsApp Button */
 .whatsapp-float {
@@ -344,4 +355,36 @@ footer {
     flex-direction: column;
     text-align: center;
   }
+}
+.quick-links {
+  background: linear-gradient(135deg, #3b82f6, #9333ea); /* blue to purple */
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.quick-links h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.quick-links ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.quick-links ul li a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.quick-links ul li a:hover {
+  color: #ffcc00;
 }
