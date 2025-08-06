@@ -271,6 +271,18 @@ body {
   color: #ff6f61;
   margin-bottom: 10px;
 }
+.map-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.map-container iframe {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 .quick-links ul {
   list-style: none;
@@ -391,3 +403,4 @@ footer {
 .quick-links ul li a:hover {
   color: #ffcc00;
 }
+
